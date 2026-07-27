@@ -102,7 +102,8 @@ def main() -> None:
                     device,
                 )
             )
-        print(f"PREP frame={frame_index + 1}/{len(frames)} token={frame.token}", flush=True)
+        if frame_index == 0 or (frame_index + 1) % 16 == 0 or frame_index + 1 == len(frames):
+            print(f"PREP frame={frame_index + 1}/{len(frames)} token={frame.token}", flush=True)
 
     payload = {
         "features": torch.stack(feature_frames),
@@ -133,4 +134,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
