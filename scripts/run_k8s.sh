@@ -16,8 +16,9 @@ python -m pip install --quiet --disable-pip-version-check \
   "transformers==4.53.2" "scipy==1.15.3" "pillow>=10.4"
 
 if [[ ! -f "$SAMPLE_TAR" ]]; then
-  curl -fL "https://drive.usercontent.google.com/download?id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6&export=download&confirm=t" \
-    -o "$SAMPLE_TAR"
+  python -c 'import sys, urllib.request; urllib.request.urlretrieve(sys.argv[1], sys.argv[2])' \
+    "https://drive.usercontent.google.com/download?id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6&export=download&confirm=t" \
+    "$SAMPLE_TAR"
 fi
 mkdir -p "$DATA_DIR" "$CACHE_DIR" "$RESULTS_DIR"
 tar -xf "$SAMPLE_TAR" -C "$DATA_DIR"
@@ -53,4 +54,3 @@ python -m reproduction.aggregate --results "$RESULTS_DIR"
 END_EPOCH=$(date +%s)
 echo "RUN_WALL_SECONDS $((END_EPOCH - START_EPOCH))"
 echo "RUN_END_UTC $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-
