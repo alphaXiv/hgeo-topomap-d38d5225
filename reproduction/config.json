@@ -1,7 +1,7 @@
 {
-  "variant": "baseline",
-  "use_gal": false,
-  "use_gcl": false,
+  "variant": "combined",
+  "use_gal": true,
+  "use_gcl": true,
   "steps": 1400,
   "batch_size": 4,
   "learning_rate": 0.0003,
@@ -16,4 +16,3 @@
   "bev_width": 40,
   "seeds": [0, 1, 2, 3]
 }
-
