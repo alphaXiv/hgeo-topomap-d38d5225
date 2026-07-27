@@ -1,0 +1,19 @@
+{
+  "variant": "baseline",
+  "use_gal": false,
+  "use_gcl": false,
+  "steps": 1400,
+  "batch_size": 4,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "num_queries": 48,
+  "num_points": 11,
+  "hidden_dim": 128,
+  "gcl_weight": 0.1,
+  "gal_k": 0.1,
+  "image_size": 112,
+  "bev_height": 20,
+  "bev_width": 40,
+  "seeds": [0, 1, 2, 3]
+}
+
