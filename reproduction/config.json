@@ -1,6 +1,6 @@
 {
-  "variant": "baseline",
-  "use_gal": false,
+  "variant": "gal",
+  "use_gal": true,
   "use_gcl": false,
   "steps": 1400,
   "batch_size": 4,
@@ -16,4 +16,3 @@
   "bev_width": 40,
   "seeds": [0, 1, 2, 3]
 }
-
