@@ -46,7 +46,9 @@ def compute_loss(outputs: dict, targets: list[torch.Tensor], config: dict) -> tu
         if config["use_gcl"]:
             for p_idx, t_idx in zip(pred_index.tolist(), target_index.tolist()):
                 contrastive_embeddings.append(outputs["embeddings"][batch_index, p_idx])
-                contrastive_groups.append(geometry_group(target[t_idx]))
+                # Negative control: preserve the contrastive loss and group
+                # cardinality while severing labels from geometric orientation.
+                contrastive_groups.append((p_idx * 7 + t_idx) % 3)
     classification = classification / len(targets)
     regression = regression / len(targets)
     gcl = (
