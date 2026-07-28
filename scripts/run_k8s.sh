@@ -27,7 +27,7 @@ CUDA_VISIBLE_DEVICES=0 python -m reproduction.prepare \
   --data-root "$DATA_DIR" --cache "$CACHE_DIR"
 
 pids=()
-for seed in 0 1 2 3; do
+for seed in 4 5 6 7; do
   CUDA_VISIBLE_DEVICES="$seed" python -m reproduction.train \
     --seed "$seed" --cache "$CACHE_DIR" --output "$RESULTS_DIR/seed_${seed}.json" \
     > "$RESULTS_DIR/seed_${seed}.log" 2>&1 &
@@ -40,7 +40,7 @@ for pid in "${pids[@]}"; do
     status=1
   fi
 done
-for seed in 0 1 2 3; do
+for seed in 4 5 6 7; do
   echo "SEED_LOG_BEGIN $seed"
   sed -n '1,240p' "$RESULTS_DIR/seed_${seed}.log"
   echo "SEED_LOG_END $seed"
