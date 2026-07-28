@@ -60,7 +60,7 @@ Zeroing semantic road occupancy while retaining the GAL pathway reduced GAL from
 
 The principal limitations are the 64-frame sample, compact decoder, substituted segmenter, simplified GCL, and high seed variance. A full reproduction still needs the complete OpenLane-V2 train/validation sets, official TopoLogic evaluation, the authors' geometry-aware decoder, and their road-prior model.
 
-All qualifying runs started after 2026-07-28T00:35:03.092Z on **Kubernetes**, using **NVIDIA RTX PRO 6000 Blackwell** GPUs. Runs allocated four GPUs each, with four concurrent runs for a peak of **16 GPUs**. The recovery campaign elapsed **49m 28s (0.83 wall hours)** through the final terminal log.
+All qualifying runs started after 2026-07-28T00:35:03.092Z on **Kubernetes**, using **NVIDIA RTX PRO 6000 Blackwell** GPUs. Runs allocated four GPUs each, with four concurrent runs for a peak of **16 GPUs**. The observed Kubernetes campaign elapsed **46m 32s (0.775613 wall hours)** through the final terminal log.
 
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/alphaXiv/hgeo-topomap-d38d5225/blob/main/notebooks/hgeo_topomap_reproduction.py)
 

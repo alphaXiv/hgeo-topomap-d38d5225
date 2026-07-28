@@ -224,7 +224,7 @@ def _(mo):
     5. For GCL, group matched centerlines by orientation/curvature and apply a supervised contrastive loss.
     6. Evaluate normal and seven single-camera-drop conditions with Fréchet-threshold average precision; pool eight seeds.
 
-    **Compute.** Every qualifying run used Kubernetes on NVIDIA RTX PRO 6000 Blackwell GPUs. Four GPUs were allocated per run; four simultaneous runs reached 16 GPUs. The fresh recovery campaign elapsed 49m 28s (0.83 wall hours).
+    **Compute.** Every qualifying run used Kubernetes on NVIDIA RTX PRO 6000 Blackwell GPUs. Four GPUs were allocated per run; four simultaneous runs reached 16 GPUs. The observed Kubernetes campaign elapsed 46m 32s (0.775613 wall hours).
 
     **What remains.** A full replication needs the complete OpenLane-V2 benchmark, official TopoLogic evaluator, authors' geometry-aware decoder, and their Mask2Former/Mapillary road priors.
 

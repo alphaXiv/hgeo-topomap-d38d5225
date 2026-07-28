@@ -11,7 +11,7 @@ This is directional evidence, not a full-score replication. The experiment used 
 - [Exact aggregate results](reports/hgeo-topomap/results.json)
 - [Open the notebook directly in Molab](https://molab.marimo.io/github/alphaXiv/hgeo-topomap-d38d5225/blob/main/notebooks/hgeo_topomap_reproduction.py)
 
-All evidence runs used Kubernetes on NVIDIA RTX PRO 6000 Blackwell GPUs. Each run allocated four GPUs and executed four seeds in parallel; four concurrent runs reached a peak of **16 GPUs**. The recovery campaign took **49m 28s (0.83 wall hours)** from inspection through the last terminal result.
+All evidence runs used Kubernetes on NVIDIA RTX PRO 6000 Blackwell GPUs. Each run allocated four GPUs and executed four seeds in parallel; four concurrent runs reached a peak of **16 GPUs**. The observed Kubernetes campaign took **46m 32s (0.775613 wall hours)**.
 
 ### Experiment log
 
