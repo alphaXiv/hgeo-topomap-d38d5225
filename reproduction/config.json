@@ -10,7 +10,7 @@
   "num_points": 11,
   "hidden_dim": 128,
   "gcl_weight": 0.001,
-  "gal_k": 0.1,
+  "gal_k": 1000.0,
   "image_size": 112,
   "bev_height": 20,
   "bev_width": 40,
