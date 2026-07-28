@@ -80,7 +80,9 @@ class LaneDETR(nn.Module):
             indexing="ij",
         )
         positions = torch.stack([xx, yy], dim=-1).reshape(-1, 2)
-        occupancy = fused.reshape(batch, -1, 1)
+        # Negative control: retain GAL's positional/attention path while
+        # removing semantic road occupancy supplied by the segmenter.
+        occupancy = torch.zeros_like(fused).reshape(batch, -1, 1)
         prior_tokens = self.prior_semantic(occupancy) + self.prior_position(positions)[None]
         reference = self.point_head(query).sigmoid().reshape(
             batch, self.num_queries, self.num_points, 2
