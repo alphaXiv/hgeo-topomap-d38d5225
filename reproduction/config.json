@@ -9,7 +9,7 @@
   "num_queries": 48,
   "num_points": 11,
   "hidden_dim": 128,
-  "gcl_weight": 0.1,
+  "gcl_weight": 0.01,
   "gal_k": 0.1,
   "image_size": 112,
   "bev_height": 20,
