@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+  <title id="title">Combined model improvement for every missing camera</title>
+  <desc id="desc">The combined model improves compact DET_l over baseline for all seven single-camera-drop conditions. The largest gain is when front-left is dropped.</desc>
+  <rect width="1000" height="540" fill="#fbfcfe"/>
+  <text x="40" y="42" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#172033">Combined priors help under every dropped view</text>
+  <text x="40" y="69" font-family="system-ui,sans-serif" font-size="15" fill="#526078">Absolute DET_l change: combined β=0.001 minus baseline; 8-seed means</text>
+  <g font-family="system-ui,sans-serif" font-size="16" fill="#24324a">
+    <text x="40" y="124">Front center</text><text x="40" y="179">Front left</text><text x="40" y="234">Front right</text>
+    <text x="40" y="289">Side left</text><text x="40" y="344">Side right</text><text x="40" y="399">Rear left</text><text x="40" y="454">Rear right</text>
+  </g>
+  <line x1="290" y1="90" x2="290" y2="475" stroke="#8793a8" stroke-width="2"/>
+  <g fill="#167d71">
+    <rect x="290" y="102" width="246" height="27" rx="5"/><rect x="290" y="157" width="502" height="27" rx="5"/>
+    <rect x="290" y="212" width="19" height="27" rx="5"/><rect x="290" y="267" width="326" height="27" rx="5"/>
+    <rect x="290" y="322" width="320" height="27" rx="5"/><rect x="290" y="377" width="252" height="27" rx="5"/>
+    <rect x="290" y="432" width="372" height="27" rx="5"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#172033">
+    <text x="546" y="122">+0.0098</text><text x="802" y="177">+0.0201</text><text x="319" y="232">+0.0008</text>
+    <text x="626" y="287">+0.0130</text><text x="620" y="342">+0.0128</text><text x="552" y="397">+0.0101</text><text x="672" y="452">+0.0149</text>
+  </g>
+  <rect x="40" y="485" width="920" height="40" rx="8" fill="#e8f4f1"/>
+  <text x="60" y="511" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#12685f">Missing-view macro: 0.0558 → 0.0674 (+20.9% relative)</text>
+</svg>

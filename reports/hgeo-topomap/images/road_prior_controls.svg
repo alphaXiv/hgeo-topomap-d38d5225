@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+  <title id="title">Road semantic and attention controls</title>
+  <desc id="desc">For GAL alone, masked semantic attention scores 0.1148, zero-road scores 0.1097, and global attention scores 0.1266. With GCL, those scores are 0.1330, 0.1183, and 0.1299 respectively.</desc>
+  <rect width="1000" height="540" fill="#fbfcfe"/>
+  <text x="40" y="42" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#172033">Road content helps; mask specificity is mixed</text>
+  <text x="40" y="69" font-family="system-ui,sans-serif" font-size="15" fill="#526078">Compact DET_l, 8-seed means; dashed line is baseline 0.1054</text>
+  <line x1="722" y1="85" x2="722" y2="500" stroke="#8793a8" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="730" y="101" font-family="system-ui,sans-serif" font-size="13" fill="#526078">baseline</text>
+  <g font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#24324a">
+    <text x="40" y="133">GAL only</text><text x="40" y="353">GAL + GCL</text>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="15" fill="#24324a">
+    <text x="145" y="133">Masked + road</text><text x="145" y="193">Masked + zero road</text><text x="145" y="253">Global + road</text>
+    <text x="145" y="353">Masked + road</text><text x="145" y="413">Masked + zero road</text><text x="145" y="473">Global + road</text>
+  </g>
+  <rect x="300" y="108" width="459" height="31" rx="5" fill="#4f8cc9"/>
+  <rect x="300" y="168" width="439" height="31" rx="5" fill="#b6c9dd"/>
+  <rect x="300" y="228" width="506" height="31" rx="5" fill="#d19b53"/>
+  <rect x="300" y="328" width="532" height="31" rx="5" fill="#167d71"/>
+  <rect x="300" y="388" width="473" height="31" rx="5" fill="#a7d1ca"/>
+  <rect x="300" y="448" width="520" height="31" rx="5" fill="#d19b53"/>
+  <g font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#172033">
+    <text x="769" y="130">0.1148</text><text x="749" y="190">0.1097</text><text x="816" y="250">0.1266</text>
+    <text x="842" y="350">0.1330</text><text x="783" y="410">0.1183</text><text x="830" y="470">0.1299</text>
+  </g>
+</svg>

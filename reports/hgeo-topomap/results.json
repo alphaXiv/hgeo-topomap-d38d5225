@@ -1,0 +1,52 @@
+{
+  "attempt_cutoff_utc": "2026-07-28T00:35:03.092Z",
+  "benchmark": "OpenLane-V2 public sample, 48 train / 16 temporal-stratified validation frames",
+  "metric": "compact centerline DET_l (Frechet AP; not numerically comparable to the official full benchmark)",
+  "seeds": 8,
+  "normal": {
+    "baseline": {"mean": 0.1054023085, "population_sd": 0.0314872865},
+    "gal_masked_k_0.1": {"mean": 0.1147578689, "population_sd": 0.0329545501},
+    "gcl_beta_0.001": {"mean": 0.1246820196, "population_sd": 0.0262296619},
+    "combined_beta_0.001": {"mean": 0.1330201458, "population_sd": 0.0195402773},
+    "gcl_beta_0.1": {"mean": 0.0634481974},
+    "combined_beta_0.1": {"mean": 0.0638418086},
+    "gcl_index_group_control": {"mean": 0.1069105836},
+    "gal_global_attention_control": {"mean": 0.1265851180},
+    "gal_zero_road_control": {"mean": 0.1096729619},
+    "combined_global_attention_control": {"mean": 0.1298934699},
+    "combined_zero_road_control": {"mean": 0.1182518563}
+  },
+  "missing_view_macro": {
+    "baseline": 0.0557518132,
+    "gal_masked_k_0.1": 0.0597430232,
+    "gcl_beta_0.001": 0.0643576956,
+    "combined_beta_0.001": 0.0673946189
+  },
+  "missing_view_by_camera": {
+    "baseline": {
+      "front_center": 0.045059971,
+      "front_left": 0.056564111,
+      "front_right": 0.022708146,
+      "side_left": 0.069426056,
+      "side_right": 0.046277879,
+      "rear_left": 0.083748266,
+      "rear_right": 0.066478263
+    },
+    "combined_beta_0.001": {
+      "front_center": 0.054904441,
+      "front_left": 0.076650545,
+      "front_right": 0.023476832,
+      "side_left": 0.082474318,
+      "side_right": 0.059077518,
+      "rear_left": 0.093835614,
+      "rear_right": 0.081343064
+    }
+  },
+  "compute": {
+    "backend": "kubernetes",
+    "gpu_model": "NVIDIA RTX PRO 6000 Blackwell",
+    "peak_concurrent_gpus": 16,
+    "elapsed_wall_time": "49m 28s",
+    "wall_hours": 0.83
+  }
+}

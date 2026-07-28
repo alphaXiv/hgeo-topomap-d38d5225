@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+  <title id="title">Centerline detection across four variants</title>
+  <desc id="desc">The mean compact DET_l rises from 0.1054 for baseline to 0.1148 for GAL, 0.1247 for GCL, and 0.1330 for combined GAL and GCL. Eight dots per row show individual seeds.</desc>
+  <rect width="1000" height="470" fill="#fbfcfe"/>
+  <text x="40" y="42" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#172033">Centerline detection improves with both priors</text>
+  <text x="40" y="69" font-family="system-ui,sans-serif" font-size="15" fill="#526078">Compact OpenLane-V2 DET_l; bars are 8-seed means, dots are seeds</text>
+  <g font-family="system-ui,sans-serif" font-size="17" fill="#24324a">
+    <text x="255" y="438">0</text><text x="450" y="438">0.05</text><text x="650" y="438">0.10</text><text x="900" y="438">0.16</text>
+    <text x="40" y="116">Baseline</text><text x="40" y="206">GAL</text><text x="40" y="296">GCL, β=0.001</text><text x="40" y="386" font-weight="700">GAL + GCL</text>
+  </g>
+  <g stroke="#d9dfeb" stroke-width="1">
+    <line x1="280" y1="80" x2="280" y2="410"/><line x1="480" y1="80" x2="480" y2="410"/>
+    <line x1="680" y1="80" x2="680" y2="410"/><line x1="920" y1="80" x2="920" y2="410"/>
+  </g>
+  <rect x="280" y="91" width="422" height="34" rx="7" fill="#aab5c7"/>
+  <rect x="280" y="181" width="459" height="34" rx="7" fill="#4f8cc9"/>
+  <rect x="280" y="271" width="499" height="34" rx="7" fill="#8b6fc3"/>
+  <rect x="280" y="361" width="532" height="34" rx="7" fill="#167d71"/>
+  <g fill="#172033" opacity="0.78">
+    <circle cx="561" cy="108" r="5"/><circle cx="893" cy="108" r="5"/><circle cx="646" cy="108" r="5"/><circle cx="689" cy="108" r="5"/><circle cx="594" cy="108" r="5"/><circle cx="879" cy="108" r="5"/><circle cx="569" cy="108" r="5"/><circle cx="782" cy="108" r="5"/>
+    <circle cx="702" cy="198" r="5"/><circle cx="840" cy="198" r="5"/><circle cx="817" cy="198" r="5"/><circle cx="478" cy="198" r="5"/><circle cx="766" cy="198" r="5"/><circle cx="915" cy="198" r="5"/><circle cx="602" cy="198" r="5"/><circle cx="793" cy="198" r="5"/>
+    <circle cx="801" cy="288" r="5"/><circle cx="888" cy="288" r="5"/><circle cx="730" cy="288" r="5"/><circle cx="709" cy="288" r="5"/><circle cx="872" cy="288" r="5"/><circle cx="906" cy="288" r="5"/><circle cx="571" cy="288" r="5"/><circle cx="753" cy="288" r="5"/>
+    <circle cx="799" cy="378" r="5"/><circle cx="830" cy="378" r="5"/><circle cx="732" cy="378" r="5"/><circle cx="892" cy="378" r="5"/><circle cx="865" cy="378" r="5"/><circle cx="859" cy="378" r="5"/><circle cx="648" cy="378" r="5"/><circle cx="872" cy="378" r="5"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="18" font-weight="700">
+    <text x="300" y="116" fill="#172033">0.1054</text><text x="300" y="206" fill="#fff">0.1148</text>
+    <text x="300" y="296" fill="#fff">0.1247</text><text x="300" y="386" fill="#fff">0.1330</text>
+  </g>
+</svg>

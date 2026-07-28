@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+  <title id="title">GCL loss-weight sensitivity</title>
+  <desc id="desc">Compact DET_l is 0.0634 at beta 0.1, 0.0773 at 0.01, peaks at 0.1247 at 0.001, and is 0.1145 at 0.0001. Baseline is 0.1054.</desc>
+  <rect width="900" height="440" fill="#fbfcfe"/>
+  <text x="40" y="42" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#172033">GCL needs loss-scale retuning</text>
+  <text x="40" y="69" font-family="system-ui,sans-serif" font-size="15" fill="#526078">Compact DET_l across a bounded β sweep; 8 seeds at β=0.1 and 0.001, 4 otherwise</text>
+  <g stroke="#d9dfeb" stroke-width="1">
+    <line x1="110" y1="340" x2="820" y2="340"/><line x1="110" y1="253" x2="820" y2="253"/>
+    <line x1="110" y1="167" x2="820" y2="167"/><line x1="110" y1="80" x2="820" y2="80"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#526078">
+    <text x="58" y="345">0.05</text><text x="58" y="258">0.08</text><text x="58" y="172">0.11</text><text x="58" y="85">0.14</text>
+    <text x="153" y="390">0.1</text><text x="352" y="390">0.01</text><text x="546" y="390">0.001</text><text x="740" y="390">0.0001</text>
+    <text x="430" y="422">GCL weight β (log-spaced)</text>
+  </g>
+  <line x1="110" y1="180" x2="820" y2="180" stroke="#8f9aae" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="650" y="171" font-family="system-ui,sans-serif" font-size="14" fill="#526078">baseline 0.1054</text>
+  <polyline points="170,301 370,261 570,124 770,154" fill="none" stroke="#8b6fc3" stroke-width="5" stroke-linejoin="round"/>
+  <g fill="#8b6fc3" stroke="#fff" stroke-width="3">
+    <circle cx="170" cy="301" r="9"/><circle cx="370" cy="261" r="9"/><circle cx="570" cy="124" r="9"/><circle cx="770" cy="154" r="9"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#172033">
+    <text x="142" y="329">0.0634</text><text x="342" y="246">0.0773</text><text x="542" y="106">0.1247</text><text x="742" y="139">0.1145</text>
+  </g>
+</svg>

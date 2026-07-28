@@ -1,3 +1,38 @@
+## Reproduction: do geometric priors improve centerline detection?
+
+[![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/alphaXiv/hgeo-topomap-d38d5225/blob/main/notebooks/hgeo_topomap_reproduction.py)
+
+**Assessment: partially reproduced.** We tested the paper's main claim on the actual public OpenLane-V2 sample with a matched compact TopoLogic-style detector. The paper reports centerline DET_l increasing from **29.7 to 31.3 (+1.6)**; our smaller Fréchet-AP scale increased from **0.1054 to 0.1330 (+0.0276, +26.2%)** across eight seeds after retuning the GCL loss weight. GAL and retuned GCL each helped separately, their combination helped most, and the combined model improved the missing-camera macro score by **20.9%**.
+
+This is directional evidence, not a full-score replication. The experiment used 48 training and 16 held-out frames, public ResNet-18 features, SegFormer Cityscapes road masks in place of the paper's Mask2Former/Mapillary masks, a compact decoder, and an orientation-grouped contrastive GCL loss rather than the complete geometry-aware decoder. The disclosed GCL weight `0.1` hurt this compact model; `0.001` was required. The GAL road content helped, but the prior mask itself was not independently superior in GAL-only controls.
+
+- [Illustrated report](reports/hgeo-topomap/report.md)
+- [Self-contained marimo tutorial](notebooks/hgeo_topomap_reproduction.py)
+- [Exact aggregate results](reports/hgeo-topomap/results.json)
+- [Open the notebook directly in Molab](https://molab.marimo.io/github/alphaXiv/hgeo-topomap-d38d5225/blob/main/notebooks/hgeo_topomap_reproduction.py)
+
+All evidence runs used Kubernetes on NVIDIA RTX PRO 6000 Blackwell GPUs. Each run allocated four GPUs and executed four seeds in parallel; four concurrent runs reached a peak of **16 GPUs**. The recovery campaign took **49m 28s (0.83 wall hours)** from inspection through the last terminal result.
+
+### Experiment log
+
+The command is copied verbatim from `orx exp status`; variants differ only through committed code/config.
+
+| Branch / experiment | Purpose or change | Exact run command | Assessment / outcome | Compute |
+|---|---|---|---|---|
+| `main` | Public report and tutorial | Not run as an experiment (publication surface) | Presentation only | — |
+| [baseline 0–3](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-baseline-fresh-0-3) + [4–7](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-baseline-seeds-4-7) | Matched compact control | `bash scripts/run_k8s.sh` | DET_l 0.1054 | Kubernetes, 4 GPUs/run |
+| [GAL 0–3](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-gal-fresh-0-3) + [4–7](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-gal-seeds-4-7) | Road prior and masked attention, `k=0.1` | `bash scripts/run_k8s.sh` | Aligned: 0.1148 | Kubernetes, 4 GPUs/run |
+| [GCL, disclosed weight](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-gcl-fresh-0-3) | Orientation consistency, `β=0.1` | `bash scripts/run_k8s.sh` | Divergent: 0.0634 | Kubernetes, 4 GPUs/run |
+| [GCL, retuned 0–3](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-gcl-beta-0-001) + [4–7](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-gcl-beta-0-001-seeds-4-7) | Orientation consistency, `β=0.001` | `bash scripts/run_k8s.sh` | Aligned after scaling: 0.1247 | Kubernetes, 4 GPUs/run |
+| [combined 0–3](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-combined-beta-0-001) + [4–7](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-combined-beta-0-001-seeds-4-7) | GAL + retuned GCL | `bash scripts/run_k8s.sh` | Strongest: 0.1330; missing-view 0.0674 | Kubernetes, 4 GPUs/run |
+| [GCL index control](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-gcl-index-group-control) | Replace geometry groups with arbitrary index groups | `bash scripts/run_k8s.sh` | 0.1069, near baseline | Kubernetes, 4 GPUs/run |
+| [GAL global-attention control](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-gal-global-attention-control) | Remove spatial mask selectivity | `bash scripts/run_k8s.sh` | 0.1266; mask not isolated for GAL alone | Kubernetes, 4 GPUs/run |
+| [combined zero-road control](https://github.com/alphaXiv/hgeo-topomap-d38d5225/tree/orx/recovery-combined-zero-road-prior-control) | Remove semantic road occupancy | `bash scripts/run_k8s.sh` | 0.1183; semantic prior contributes | Kubernetes, 4 GPUs/run |
+
+---
+
+## Upstream project README
+
 <p align="center">
 
   <h1 align="center">HGeo-TopoMap: Boosting Topological Mapping with Hierarchical Geometric Priors</h1>
@@ -56,4 +91,3 @@ Thanks a lot :)
   year={2026}
 }
 ```
-
