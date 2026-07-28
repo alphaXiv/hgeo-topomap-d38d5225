@@ -27,8 +27,9 @@ CUDA_VISIBLE_DEVICES=0 python -m reproduction.prepare \
   --data-root "$DATA_DIR" --cache "$CACHE_DIR"
 
 pids=()
-for seed in 4 5 6 7; do
-  CUDA_VISIBLE_DEVICES="$seed" python -m reproduction.train \
+for gpu in 0 1 2 3; do
+  seed=$((gpu + 4))
+  CUDA_VISIBLE_DEVICES="$gpu" python -m reproduction.train \
     --seed "$seed" --cache "$CACHE_DIR" --output "$RESULTS_DIR/seed_${seed}.json" \
     > "$RESULTS_DIR/seed_${seed}.log" 2>&1 &
   pids+=("$!")
